@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/user_order_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+    
+    <TextView
+        android:id="@+id/story_disclosure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/user_order_pic"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/user_order_pic"
+        android:paddingRight="5dp"
+        android:text="@string/story_action_result"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/story_order_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/story_disclosure"
+        android:layout_toRightOf="@+id/user_order_pic"
+        android:layout_alignLeft="@+id/story_disclosure"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/user_message"
+        android:hint="@string/hint_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/user_order_pic"
+        android:layout_marginLeft="29dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/user_message"
+        android:layout_marginTop="18dp" >
+
+        <ImageButton
+            android:id="@+id/tag_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:src="@drawable/action_people" />
+
+        <ImageButton
+            android:id="@+id/tag_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="0.33"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:src="@drawable/action_location" />
+
+        <ImageButton
+            android:id="@+id/add_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="0.33"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:src="@drawable/action_photo" />
+
+    </LinearLayout>
+
+
+    
+
+    <ImageView
+        android:id="@+id/drink_order_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       	android:layout_below="@+id/buttons_layout"
+        android:layout_marginLeft="20dp"
+       	android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/drink_order_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       	android:layout_below="@+id/buttons_layout"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/drink_order_image"
+        android:text="TextView"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/drink_order_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/drink_order_title"
+        android:layout_below="@+id/drink_order_title"
+        android:text="TextView" />
+
+   <ImageButton
+       android:id="@+id/order_drink_button"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentRight="true"
+       android:layout_below="@+id/drink_order_image"
+       android:layout_marginTop="10dp"
+       android:background="@android:drawable/screen_background_light_transparent"
+       android:src="@drawable/order" />
+
+
+
+</RelativeLayout>
