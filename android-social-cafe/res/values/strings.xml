@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SocialCafe</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity">Social Cafe</string>
+	<string name="login_with_facebook">Login with Facebook</string>
+	<string name="logout">Logout</string>
+	<string name="please_wait">Please wait &#8230;</string>
+	<string name="hint_message">Say some more &#8230;</string>
+	<string name="menu">Menu</string>
+	<string name="place_order">Order</string>
+	<string name="confirmation">Confirmation</string>
+	<string name="og_message">%1$s ordered %2$s</string>
+	<string name="drink_enjoyed">Glad you enjoyed your %s!</string>
+	<string name="ok">OK</string>
+	<string name="tag_friends_not_supported">Friends tagging not supported yet.</string>
+	<string name="tag_location_not_supported">Location tagging not supported yet.</string>
+	<string name="add_photo_not_supported">Adding photo not supported yet.</string>
+	<string name="story_action_result">Ordering a drink will publish this story to your timeline:</string>
+</resources>
