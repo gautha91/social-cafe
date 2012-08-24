@@ -96,7 +96,7 @@ public class MenuFragmentActivity extends Fragment {
 	
 	@Override
 	public void onDestroyView () {
-		super.onDestroy();
+		super.onDestroyView();
 		userNameView = null;
 		userPicView = null;
 	}

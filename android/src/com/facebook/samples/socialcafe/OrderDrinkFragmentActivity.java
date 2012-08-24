@@ -133,7 +133,7 @@ public class OrderDrinkFragmentActivity extends Fragment {
 	
 	@Override
 	public void onDestroyView () {
-		super.onDestroy();
+		super.onDestroyView();
 		dialog = null;
 	}
 	
