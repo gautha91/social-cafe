@@ -435,7 +435,7 @@ UIImagePickerControllerDelegate>
 
 - (void)locationManager:(CLLocationManager *)manager 
        didFailWithError:(NSError *)error {
-	NSLog(@"%@", error);
+	NSLog(@"Location error: %@", error);
 }
 
 #pragma mark - UITextViewDelegate methods
