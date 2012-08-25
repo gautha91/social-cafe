@@ -38,4 +38,10 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
         }
     }
 	
+	@Override
+	public void onResume() {
+		super.onResume();
+		((SocialCafeApplication)getApplication()).facebook.extendAccessTokenIfNeeded(this, null);
+	}
+	
 }

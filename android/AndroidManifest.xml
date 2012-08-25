@@ -14,7 +14,9 @@
         android:name=".SocialCafeApplication" >
         <activity android:name=".LoginActivity"/>
         <activity android:name=".MenuActivity"/>
-        <activity android:name=".OrderDrinkActivity"/>
+        <activity 
+            android:name=".OrderDrinkActivity"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".ConfirmationActivity"/>
         <activity
             android:name=".SplashActivity"

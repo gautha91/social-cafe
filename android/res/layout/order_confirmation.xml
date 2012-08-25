@@ -1,63 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/drink_confirmation_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:paddingLeft="30dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/icon" />
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+	
+	    <ImageView
+	        android:id="@+id/drink_confirmation_image"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:paddingLeft="30dp"
+	        android:layout_marginRight="20dp"
+	        android:layout_marginTop="15dp"
+	        android:src="@drawable/icon" />
+	
+	    <TextView
+	        android:id="@+id/drink_confirmation_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/drink_confirmation_image"
+	        android:layout_alignTop="@+id/drink_confirmation_image"
+	        android:layout_centerHorizontal="true"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <TextView
+	        android:id="@+id/drink_confirmation_info"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/drink_confirmation_title"
+	        android:layout_alignLeft="@+id/drink_confirmation_title"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+	    <ImageButton
+	        android:id="@+id/enjoy_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/drink_confirmation_info"
+	        android:layout_below="@+id/drink_confirmation_info"
+	        android:layout_marginTop="18dp"
+	        android:background="@android:drawable/btn_dialog"
+	        android:src="@drawable/enjoy" />
+	    
+	    <TextView
+	        android:id="@+id/og_message"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_below="@+id/enjoy_button"
+	        android:layout_marginTop="30dp"
+	        android:paddingLeft="30dp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <ImageButton
+	        android:id="@+id/return_to_menu_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/og_message"
+	        android:layout_marginTop="58dp"
+	        android:background="@android:drawable/btn_dialog"
+	        android:src="@drawable/return_to_menu" />
+	
+	</RelativeLayout>
 
-    <TextView
-        android:id="@+id/drink_confirmation_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/drink_confirmation_image"
-        android:layout_alignTop="@+id/drink_confirmation_image"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/drink_confirmation_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/drink_confirmation_title"
-        android:layout_alignLeft="@+id/drink_confirmation_title"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <ImageButton
-        android:id="@+id/enjoy_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/drink_confirmation_info"
-        android:layout_below="@+id/drink_confirmation_info"
-        android:layout_marginTop="18dp"
-        android:background="@android:drawable/btn_dialog"
-        android:src="@drawable/enjoy" />
-    
-    <TextView
-        android:id="@+id/og_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_below="@+id/enjoy_button"
-        android:layout_marginTop="30dp"
-        android:paddingLeft="30dp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ImageButton
-        android:id="@+id/return_to_menu_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/og_message"
-        android:layout_marginTop="58dp"
-        android:background="@android:drawable/btn_dialog"
-        android:src="@drawable/return_to_menu" />
-
-</RelativeLayout>
+</ScrollView>

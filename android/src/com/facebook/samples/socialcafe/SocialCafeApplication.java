@@ -53,7 +53,9 @@ public class SocialCafeApplication extends Application {
 		//restore session if one exists
         ApplicationStore.restoreSession(facebook, this);
         
-        //creat a dummy drinks list.
+        /* Create a dummy drinks list.
+         * Using dummy data for drink info.
+         */
         drinks = new ArrayList<Drink>();
         drinks.add(new Drink("Cafe Latte", "2 others enjoyed this", R.drawable.latte, "Small", "http://social-cafe.herokuapp.com/latte.php"));
         drinks.add(new Drink("Iced Mocha", "6 others enjoyed this", R.drawable.icedmocha, "Large", "http://social-cafe.herokuapp.com/icedmocha.php"));
