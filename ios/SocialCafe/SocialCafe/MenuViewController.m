@@ -30,6 +30,8 @@ MenuDataLoadDelegate>
 @property (strong, nonatomic) Menu *menu;
 @property (strong, nonatomic) UILabel *label;
 @property (strong, nonatomic) NSDictionary<FBGraphUser> *user;
+@property (strong, nonatomic) NSString *menuLink;
+@property (assign, nonatomic) NSUInteger selectedMenuIndex;
 
 - (void)populateUserDetails;
 - (void)initMenuItems;
@@ -43,6 +45,8 @@ MenuDataLoadDelegate>
 @synthesize menu = _menu;
 @synthesize label = _label;
 @synthesize user = _user;
+@synthesize menuLink = _menuLink;
+@synthesize selectedMenuIndex = _selectedMenuIndex;
 
 #pragma mark - Helper methods
 /*
@@ -78,6 +82,39 @@ MenuDataLoadDelegate>
 }
 
 
+/*
+ * Set up the deep link URL
+ */
+- (void) initMenuFromUrl:(NSString *)url{
+    self.menuLink = url;
+}
+
+/*
+ * Go to a selected menu page due to a deep link
+ */
+
+- (void) goToSelectedMenu {
+    NSURL *menuLinkURL = [NSURL URLWithString:self.menuLink];
+
+    // Find the menu that matches the deep link URL
+    NSInteger menuIndex = -1;
+    for (NSInteger i = 0; i < [self.menu.items count]; i++) {
+        NSURL *checkURL = [NSURL URLWithString:
+                           [[self.menu.items objectAtIndex:i]
+                            objectForKey:@"url"]];
+        if ([[menuLinkURL path] isEqualToString:[checkURL path]]) {
+            menuIndex = i;
+            break;
+        }
+    }
+    self.menuLink = nil;
+    // If a menu match found go to the order view controller
+    if (menuIndex >= 0) {
+        self.selectedMenuIndex = menuIndex;
+        [self performSegueWithIdentifier:@"SegueToOrder" sender:self];
+    }
+}
+
 #pragma mark - View life cycle
 - (void)viewDidLoad
 {
@@ -111,6 +148,11 @@ MenuDataLoadDelegate>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if (FBSession.activeSession.isOpen && self.menuLink) {
+        [self goToSelectedMenu];
+    }
+    
     if (FBSession.activeSession.state == FBSessionStateOpen) {
         // If the user's session is active personalize the
         // experience
@@ -185,15 +227,16 @@ MenuDataLoadDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedMenuIndex = [indexPath row];
     [self performSegueWithIdentifier:@"SegueToOrder" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"SegueToOrder"]) {
-        // Set the data row
+        // Go to the selected menu
         OrderViewController *ovc = (OrderViewController *)segue.destinationViewController;
-        ovc.menuItem = [self.menu.items objectAtIndex:[[self.menuTableView indexPathForSelectedRow] row]];
+        ovc.menuItem = [self.menu.items objectAtIndex:self.selectedMenuIndex];
         ovc.user = self.user;
         [self.menuTableView deselectRowAtIndexPath:[self.menuTableView indexPathForSelectedRow] animated:NO];
     }

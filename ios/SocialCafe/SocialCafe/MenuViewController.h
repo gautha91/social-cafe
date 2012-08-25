@@ -18,4 +18,7 @@
 
 @interface MenuViewController : UIViewController
 
+- (void) initMenuFromUrl:(NSString *)url;
+- (void) goToSelectedMenu;
+
 @end
