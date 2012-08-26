@@ -1,8 +1,8 @@
 # Social Cafe App
 
-Sample app for social cafe
+Social Cafe sample that enables users to tell their friends what beverage they're currently enjoying, by posting it to their Timeline via Open Graph. 
 
-Authors: Christine Abernathy (caabernathy), Dhiren Patel , Vikas Gupta (vksgupta)
+Authors: Christine Abernathy (caabernathy), Dhiren Patel, Vikas Gupta (vksgupta)
 
 ## Installing
 
@@ -10,7 +10,7 @@ Clone the project:
 
     git clone https://github.com/fbsamples/social-cafe
 
-Get the web repo files:
+Get the web, iOS, and Android repo files:
 
     cd social-cafe/
 
@@ -19,10 +19,6 @@ Get the web repo files:
     git submodule update
 
 Then see README under each platform for further instructions for on building for that platform. The web instructions will show you the Open Graph configuration so even if you are setting up for only iOS or only Android, take a look there for further instructions on the Open Graph setup.
-
-## Documentation
-
-## Additional Resources
 
 ## Contributing
 
